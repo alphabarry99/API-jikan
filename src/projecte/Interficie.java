@@ -1,6 +1,6 @@
 package projecte;
 
-public class interficie {
+public class Interficie {
     /**
      * Mostra per pantalla tots els usuaris que han utilitzat la nostra aplicació
      * @param llistat paràmetre que conté tots els usuaris que han consultat la nostra aplicació
@@ -26,6 +26,16 @@ public class interficie {
      * l'usuari.
      */
     public static void mostrarMenu(String[] menu){
+        while (!ordre.equalsIgnoreCase("x")) {
+            System.out.println("\033[0;1m" + "MENÚ DEL JOC " );
+            System.out.println("1-Carregar Dades  [1]");
+            System.out.println("2-Consultar  [2]");
+            System.out.println("3-Afegir    [3]");
+            System.out.println("X-Sortir                [0]");
+            ordre = sc.next();
+
+            System.out.println("_______________________________________________");
+            System.out.println("");
 
     }
 
