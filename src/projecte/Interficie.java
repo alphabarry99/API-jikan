@@ -28,6 +28,7 @@ public class Interficie {
      * l'usuari.
      */
     public static void mostrarMenu(String[] menu){
+<<<<<<< HEAD
         System.out.println("Ecolliu una opció");
 
         int resposta = 0;
@@ -38,6 +39,16 @@ public class Interficie {
             System.out.println("3. Afegir Dades");
             System.out.println("4. Esborrar Dades");
             System.out.println("0. Sortir");
+=======
+        while (!ordre.equalsIgnoreCase("x")) {
+            System.out.println("\033[0;1m" + "MENÚ DEL JOC " );
+            System.out.println("1-Carregar Dades    [1]");
+            System.out.println("2-Consultar         [2]");
+            System.out.println("3-Afegir            [3]");
+            System.out.println("4-Esborrar          [4]");
+            System.out.println("0-Sortir            [0]");
+            ordre = sc.next();
+>>>>>>> 7985ff33d3c3612326afabbf3990bc43cd7880ed
 
             Scanner sc = new Scanner(System.in);
             resposta = Integer.valueOf(sc.nextInt());
