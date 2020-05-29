@@ -3,8 +3,6 @@ package projecte;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
-import project.uf4.model.ComplexEsportiu;
-import project.uf4.model.DadesAPI;
 
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
