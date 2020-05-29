@@ -1,5 +1,7 @@
 package projecte;
 
+import java.util.Scanner;
+
 public class Interficie {
     /**
      * Mostra per pantalla tots els usuaris que han utilitzat la nostra aplicació
@@ -26,17 +28,37 @@ public class Interficie {
      * l'usuari.
      */
     public static void mostrarMenu(String[] menu){
-        while (!ordre.equalsIgnoreCase("x")) {
-            System.out.println("\033[0;1m" + "MENÚ DEL JOC " );
-            System.out.println("1-Carregar Dades  [1]");
-            System.out.println("2-Consultar  [2]");
-            System.out.println("3-Afegir    [3]");
-            System.out.println("X-Sortir                [0]");
-            ordre = sc.next();
+        System.out.println("Ecolliu una opció");
 
-            System.out.println("_______________________________________________");
-            System.out.println("");
+        int resposta = 0;
 
+        do {
+            System.out.println("1. Carregar Dades");
+            System.out.println("2. Mostrar Dades");
+            System.out.println("3. Afegir Dades");
+            System.out.println("4. Esborrar Dades");
+            System.out.println("0. Sortir");
+
+            Scanner sc = new Scanner(System.in);
+            resposta = Integer.valueOf(sc.nextInt());
+
+            switch (resposta){
+                case 1:
+                    System.out.println("Carregant Dades");
+                    break;
+                case 2:
+                    System.out.println("Mostrant Dades");
+                    break;
+                case 3:
+                    System.out.println("Afegint Dades");
+                    break;
+                case 4:
+                    System.out.println("Esborrant Dades");
+                    break;
+                default:
+                    System.out.println("Escull una opció valida.");
+            }
+        }while (resposta != 0);
     }
 
     /**
