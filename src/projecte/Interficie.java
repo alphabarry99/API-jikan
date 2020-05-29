@@ -28,10 +28,11 @@ public class Interficie {
     public static void mostrarMenu(String[] menu){
         while (!ordre.equalsIgnoreCase("x")) {
             System.out.println("\033[0;1m" + "MENÚ DEL JOC " );
-            System.out.println("1-Carregar Dades  [1]");
-            System.out.println("2-Consultar  [2]");
-            System.out.println("3-Afegir    [3]");
-            System.out.println("X-Sortir                [0]");
+            System.out.println("1-Carregar Dades    [1]");
+            System.out.println("2-Consultar         [2]");
+            System.out.println("3-Afegir            [3]");
+            System.out.println("4-Esborrar          [4]");
+            System.out.println("0-Sortir            [0]");
             ordre = sc.next();
 
             System.out.println("_______________________________________________");
