@@ -1,6 +1,6 @@
 package projecte;
 
-public class interficie {
+public class Interficie {
     /**
      * Mostra per pantalla tots els usuaris que han utilitzat la nostra aplicació
      * @param llistat paràmetre que conté tots els usuaris que han consultat la nostra aplicació
