@@ -2,8 +2,8 @@ package projecte;
 
 public class Asteroide {
 
-    private String nom;
-    private String diam_km;
+    public String nom;
+    public String diam_km;
 
     public Asteroide(String nom, String diam_km) {
         this.nom = nom;

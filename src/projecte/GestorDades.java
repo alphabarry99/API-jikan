@@ -10,7 +10,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 public class GestorDades {
 
-    private DadesAPI dades;
+    static DadesAPI dades;
 
     public GestorDades() {
 
@@ -19,7 +19,7 @@ public class GestorDades {
     /**
      * Carrega des de l'API les dades dels complexes
      */
-    public void carregarComplexes(){
+    public static void carregarAsteroides(){
 
         try {
             URL url = new URL("https://api.nasa.gov/neo/rest/v1/neo/browse?api_key=DEMO_KEY");
@@ -41,7 +41,7 @@ public class GestorDades {
         }
     }
 
-    public void mostrarComplexes()  {
+    public void mostrarAsteroides()  {
 
         Interficie.mostrarMissatge(dades.getLlista());
     }
