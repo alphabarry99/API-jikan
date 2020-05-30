@@ -1,12 +1,33 @@
 
 package projecte;
 
+import java.util.ArrayList;
+
 public class DadesAPI {
 
-    //substitueix ELEMENTS per un nom més adient per a les teves variables
-    static final int NUM_ELEMENTS1 = 100;
-    static final int NUM_ELEMENTS2 = 100;
+    private ArrayList<Asteroide> l;
 
-    String[] elements1 = new String[DadesAPI.NUM_ELEMENTS1];
-    String[] elements2 = new String[DadesAPI.NUM_ELEMENTS2];
+    public DadesAPI() {
+        l = new ArrayList<>();
+    }
+
+    public ArrayList<Asteroide> getL1() {
+        return l;
+    }
+
+    public void afegirAsteroide(Asteroide ast) {
+        l.add(ast);
+    }
+    public void esborrarAsteroide(Asteroide ast) {
+        l.remove(ast);
+    }
+
+    public String getLlista() {
+        StringBuilder sb = new StringBuilder();
+        for (Asteroide ast : l) {
+            sb.append(ast);
+            sb.append("\n");
+        }
+        return sb.toString();
+    }
 }

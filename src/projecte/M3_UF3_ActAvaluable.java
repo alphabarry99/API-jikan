@@ -14,7 +14,6 @@ public class M3_UF3_ActAvaluable {
      * que aquesta opció sigui la de sortir.
      */
     public void inici(){
-
     }
 
     /**

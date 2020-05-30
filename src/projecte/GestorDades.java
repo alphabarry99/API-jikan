@@ -13,6 +13,7 @@ public class GestorDades {
     private DadesAPI dades;
 
     public GestorDades() {
+
         dades = new DadesAPI();
     }
     /**
@@ -25,14 +26,14 @@ public class GestorDades {
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             JSONParser parser = new JSONParser();
             JSONObject jsonObject = (JSONObject) parser.parse(new InputStreamReader(connection.getInputStream()));
-            JSONArray jsonArray = (JSONArray) jsonObject.get("id");
+            JSONArray jsonArray = (JSONArray) jsonObject.get("near_earth_objects");
             for (int i = 0; i < jsonArray.size(); i++) {
                 JSONObject asteroide = (JSONObject)jsonArray.get(i);
-                JSONObject dadesAdreca = (JSONObject)complexEsportiu.get("grup_adreca");
-                String nom = String.valueOf(complexEsportiu.get("adreca_nom"));
-                String municipi = String.valueOf(dadesAdreca.get("municipi_nom"));
-                /*ComplexEsportiu ce = new ComplexEsportiu(nom, municipi);
-                dades.afegirComplex(ce);*/
+                JSONObject diametre = (JSONObject)asteroide.get("estimated_diameter");
+                String nom = String.valueOf(asteroide.get("name"));
+                String diam_km = String.valueOf(diametre.get("kilometers"));
+                Asteroide ast = new Asteroide(nom, diam_km);
+                dades.afegirAsteroide(ast);
             }
             connection.disconnect();
         } catch (Exception e) {
