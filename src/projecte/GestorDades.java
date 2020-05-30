@@ -21,18 +21,18 @@ public class GestorDades {
     public void carregarComplexes(){
 
         try {
-            URL url = new URL("https://do.diba.cat/api/dataset/puntesports/pag-ini/1/pag-fi/100/format/json");
+            URL url = new URL("https://api.nasa.gov/neo/rest/v1/neo/browse?api_key=DEMO_KEY");
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             JSONParser parser = new JSONParser();
             JSONObject jsonObject = (JSONObject) parser.parse(new InputStreamReader(connection.getInputStream()));
-            JSONArray jsonArray = (JSONArray) jsonObject.get("elements");
+            JSONArray jsonArray = (JSONArray) jsonObject.get("id");
             for (int i = 0; i < jsonArray.size(); i++) {
-                JSONObject complexEsportiu = (JSONObject) jsonArray.get(i);
-                JSONObject dadesAdreca = (JSONObject) complexEsportiu.get("grup_adreca");
+                JSONObject asteroide = (JSONObject)jsonArray.get(i);
+                JSONObject dadesAdreca = (JSONObject)complexEsportiu.get("grup_adreca");
                 String nom = String.valueOf(complexEsportiu.get("adreca_nom"));
                 String municipi = String.valueOf(dadesAdreca.get("municipi_nom"));
-                ComplexEsportiu ce = new ComplexEsportiu(nom, municipi);
-                dades.afegirComplex(ce);
+                /*ComplexEsportiu ce = new ComplexEsportiu(nom, municipi);
+                dades.afegirComplex(ce);*/
             }
             connection.disconnect();
         } catch (Exception e) {
