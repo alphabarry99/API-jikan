@@ -10,7 +10,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 public class GestorDades {
 
-    static DadesAPI dades;
+    private DadesAPI dades;
 
     public GestorDades() {
 
@@ -19,7 +19,7 @@ public class GestorDades {
     /**
      * Carrega des de l'API les dades dels asteroides de la Nasa
      */
-    public static void carregarAsteroides(){
+    public void carregarAsteroides(){
 
         try {
             URL url = new URL("https://api.nasa.gov/neo/rest/v1/neo/browse?api_key=DEMO_KEY");
@@ -38,7 +38,7 @@ public class GestorDades {
                 System.out.println("Diàmetre mínim en KM: : " + min_diam_km);
                 System.out.println("Diàmetre màxim en KM: : " + max_diam_km + "\n");
                 Asteroide ast = new Asteroide(nom, min_diam_km, max_diam_km);
-                /*dades.afegirAsteroide(ast);*/
+                dades.afegirAsteroide(ast);
 
             }
             connection.disconnect();
