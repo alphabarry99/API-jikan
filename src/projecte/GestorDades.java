@@ -32,10 +32,14 @@ public class GestorDades {
                 JSONObject diametre = (JSONObject) asteroide.get("estimated_diameter");
                 JSONObject diam_km = (JSONObject) diametre.get("kilometers");
                 String nom = String.valueOf(asteroide.get("name"));
-                System.out.println("Nom: " + nom);
                 String min_diam_km = String.valueOf(diam_km.get("estimated_diameter_min"));
-                Asteroide ast = new Asteroide(nom, min_diam_km);
-                dades.afegirAsteroide(ast);
+                String max_diam_km = String.valueOf(diam_km.get("estimated_diameter_max"));
+                System.out.println("Nom: " + nom);
+                System.out.println("Diàmetre mínim en KM: : " + min_diam_km);
+                System.out.println("Diàmetre màxim en KM: : " + max_diam_km + "\n");
+                Asteroide ast = new Asteroide(nom, min_diam_km, max_diam_km);
+                /*dades.afegirAsteroide(ast);*/
+
             }
             connection.disconnect();
         } catch (Exception e) {
