@@ -46,12 +46,13 @@ public class Interficie {
             Scanner sc = new Scanner(System.in);
             resposta = Integer.valueOf(sc.nextInt());
 
+            GestorDades g = new GestorDades();
 
             switch (resposta){
                 case 1:
                     System.out.println("Carregant Dades");
                     System.out.println(separador);
-                    GestorDades.carregarAsteroides();
+                    g.carregarAsteroides();
                     break;
                 case 2:
                     System.out.println("Mostrant Dades");
