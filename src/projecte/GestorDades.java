@@ -17,7 +17,7 @@ public class GestorDades {
         dades = new DadesAPI();
     }
     /**
-     * Carrega des de l'API les dades dels complexes
+     * Carrega des de l'API les dades dels asteroides de la Nasa
      */
     public static void carregarAsteroides(){
 
