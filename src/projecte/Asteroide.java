@@ -3,11 +3,11 @@ package projecte;
 public class Asteroide {
 
     public String nom;
-    public String diam_km;
+    public String min_diam_km;
 
-    public Asteroide(String nom, String diam_km) {
+    public Asteroide(String nom, String min_diam_km) {
         this.nom = nom;
-        this.diam_km = diam_km;
+        this.min_diam_km = min_diam_km;
     }
 
 
@@ -15,7 +15,7 @@ public class Asteroide {
     public String toString() {
         return "Asteroide{" +
                 "nom =" + nom +
-                ", diàmetres en km = " + diam_km +
+                ", diàmetres en km = " + min_diam_km +
                 '}';
     }
 }

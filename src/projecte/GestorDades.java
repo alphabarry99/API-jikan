@@ -29,10 +29,12 @@ public class GestorDades {
             JSONArray jsonArray = (JSONArray) jsonObject.get("near_earth_objects");
             for (int i = 0; i < jsonArray.size(); i++) {
                 JSONObject asteroide = (JSONObject)jsonArray.get(i);
-                JSONObject diametre = (JSONObject)asteroide.get("estimated_diameter");
+                JSONObject diametre = (JSONObject) asteroide.get("estimated_diameter");
+                JSONObject diam_km = (JSONObject) diametre.get("kilometers");
                 String nom = String.valueOf(asteroide.get("name"));
-                String diam_km = String.valueOf(diametre.get("kilometers"));
-                Asteroide ast = new Asteroide(nom, diam_km);
+                System.out.println("Nom: " + nom);
+                String min_diam_km = String.valueOf(diam_km.get("estimated_diameter_min"));
+                Asteroide ast = new Asteroide(nom, min_diam_km);
                 dades.afegirAsteroide(ast);
             }
             connection.disconnect();
@@ -43,7 +45,6 @@ public class GestorDades {
 
     public void mostrarAsteroides()  {
 
-        Interficie.mostrarMissatge(dades.getLlista());
     }
 
     /**
